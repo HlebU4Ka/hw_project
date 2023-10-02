@@ -17,10 +17,10 @@ class UserManager(models.Manager):
 
 # Create your models here.
 class User(models.Model):
-    email = models.CharField(max_length=True, db_index=True, **avatars_settings)
+    email = models.CharField(max_length=200, db_index=True)
     phone = models.CharField(max_length=15)
     city = models.CharField(max_length=100)
-    avatar = models.ImageField(upload_to='avatars')
+    avatar = models.ImageField(upload_to='images/', **avatars_settings)
 
     objects = UserManager()
 

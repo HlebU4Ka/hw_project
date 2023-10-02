@@ -1,5 +1,11 @@
 from django.db import models
 
+avatars_settings = {
+    'null': True,
+    'blank': True
+
+}
+
 
 class CourseManager(models.Manager):
     def get_courses_by_description(self, description):
@@ -8,7 +14,7 @@ class CourseManager(models.Manager):
 
 class Course(models.Model):
     title = models.CharField(max_length=255)
-    preview = models.ImageField(upload_to="courses_preview")
+    preview = models.ImageField(upload_to='images/', **avatars_settings)
     description = models.TextField(blank=True)
 
     objects = CourseManager()

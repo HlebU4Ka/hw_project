@@ -1,12 +1,14 @@
 from django.contrib import admin
 from django.urls import path, include
-from myproject.users import urls as users_urls
-from myproject.courses import urls as courses_urls
-from myproject.lessons import urls as lessons_urls
+from django.conf import settings
+from django.conf.urls.static import static
 
-urlpatterns =[
+urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('users.urls')),
     path('api/', include('courses.urls')),
     path('api/', include('lessons.urls')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
