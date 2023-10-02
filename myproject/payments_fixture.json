@@ -1,0 +1,44 @@
+[
+    {
+        "model": "users.user",
+        "pk": 1,
+        "fields": {
+            "email": "user1@example.com",
+            "phone": "123456789",
+            "city": "Some City",
+            "avatar": ""
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 2,
+        "fields": {
+            "email": "user2@example.com",
+            "phone": "987654321",
+            "city": "Another City",
+            "avatar": ""
+        }
+    },
+    {
+        "model": "payments.payment",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "payment_date": "2023-10-01",
+            "course_or_lesson": "Course 1",
+            "amount": "100.00",
+            "payment_method": "cash"
+        }
+    },
+    {
+        "model": "payments.payment",
+        "pk": 2,
+        "fields": {
+            "user": 2,
+            "payment_date": "2023-10-02",
+            "course_or_lesson": "Lesson 3",
+            "amount": "50.00",
+            "payment_method": "transfer"
+        }
+    }
+]

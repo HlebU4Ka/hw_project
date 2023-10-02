@@ -9,6 +9,7 @@ packages = [{include = "hw_project"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 router = "^0.1"
+django-filter = "^23.3"
 
 
 [build-system]
