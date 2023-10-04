@@ -1,10 +1,9 @@
-from django.urls import path, include
-from .views import LessonViewSet, LessonDetailViewSet
-from rest_framework.routers import DefaultRouter
-
-router = DefaultRouter()
-router.register(r'lessons', LessonViewSet)
+from django.urls import path
+from .views import LessonCreateView, LessonRetrieveView, LessonUpdateView, LessonDeleteView
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('lessons/', LessonCreateView.as_view(), name='lesson-create'),
+    path('lessons/<int:pk>/', LessonRetrieveView.as_view(), name='lesson-retrieve'),
+    path('lessons/<int:pk>/update/', LessonUpdateView.as_view(), name='lesson-update'),
+    path('lessons/<int:pk>/delete/', LessonDeleteView.as_view(), name='lesson-delete'),
 ]

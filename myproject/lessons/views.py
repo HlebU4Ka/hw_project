@@ -1,15 +1,23 @@
-from rest_framework import viewsets, generics
+from rest_framework import generics
 from .models import Lesson
 from .serializers import LessonSerializer
 
 
-# Create your views here.
-
-class LessonViewSet(viewsets.ModelViewSet):
+class LessonCreateView(generics.CreateAPIView):
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
 
 
-class LessonDetailViewSet(generics.RetrieveUpdateDestroyAPIView):
+class LessonRetrieveView(generics.RetrieveAPIView):
+    queryset = Lesson.objects.all()
+    serializer_class = LessonSerializer
+
+
+class LessonUpdateView(generics.UpdateAPIView):
+    queryset = Lesson.objects.all()
+    serializer_class = LessonSerializer
+
+
+class LessonDeleteView(generics.DestroyAPIView):
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer

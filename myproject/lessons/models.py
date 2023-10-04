@@ -6,6 +6,7 @@ avatars_settings = {
 
 }
 
+
 class LessonManager(models.Manager):
     def get_lessons_by_title(self, title):
         return self.filter(title__icontains=title)

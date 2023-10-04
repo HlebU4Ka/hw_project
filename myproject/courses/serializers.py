@@ -1,6 +1,6 @@
 from rest_framework import serializers
-from .models import Course
 from myproject.lessons.serializers import LessonSerializer
+from .models import Course
 
 
 class CourseSerializer(serializers.ModelSerializer):
@@ -8,8 +8,7 @@ class CourseSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Course
-        fields = ('id', 'name', 'preview',
-                  'description', 'num_lessons')
+        fields = ('id', 'preview', 'description', 'num_lessons')
 
-        def get_num_lessons(self, obj):
-            return obj.lesson_set.count()
+    def get_num_lessons(self, obj):
+        return obj.lesson_set.count()
